@@ -1,0 +1,214 @@
+gap> gap>
+Variable: 'gap' must have a value
+> ;
+Syntax error: expression expected
+;
+^
+gap> Read("/home/anton/lab/gap/hm.lst");
+Error file "/home/anton/lab/gap/hm.lst" must exist and be readable at
+Error( "file \"", name, "\" must exist and be readable" );
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop, you can 'quit;' to quit to outer loop,
+or you can return to continue
+brk> gap> DirectoryCurrent();
+dir("./")
+gap> Read("/home/anton/lab/gap/nh.lst");
+gap> nh;
+Variable: 'nh' must have a value
+gap> hn;
+rec( isGraph := true, order := 16, group := Group(()), 
+  schreierVector := [ -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, 
+      -14, -15, -16 ], 
+  adjacencies := [ [ 16 ], [ 9 ], [ 6 ], [ 7 ], [ 8 ], [ 3 ], [ 4 ], [ 5 ], 
+      [ 2 ], [ 13 ], [ 12 ], [ 11 ], [ 10 ], [ 15 ], [ 14 ], [ 1 ] ], 
+  representatives := [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ], 
+  isSimple := true )
+gap> UndirectedEdges(hn);
+[ [ 1, 16 ], [ 2, 9 ], [ 3, 6 ], [ 4, 7 ], [ 5, 8 ], [ 10, 13 ], [ 11, 12 ], 
+  [ 14, 15 ] ]
+gap> AutGroupGraph(hn);
+<permutation group with 10 generators>
+gap> Size(last);
+10321920
+gap> h4:=Hypercube(4);
+rec( isGraph := true, order := 16, 
+  group := Group([ ( 2,10)( 7,11)( 8,12)( 9,13) ]), 
+  schreierVector := [ -1, -2, -3, -4, -5, -6, -7, -8, -9, 1, 1, 1, 1, -10, -11, 
+      -12 ], 
+  adjacencies := [ [ 2, 10, 14, 16 ], [ 1, 3, 7, 9 ], [ 2, 4, 6, 10 ], 
+      [ 3, 5, 7, 11 ], [ 4, 6, 8, 12 ], [ 3, 5, 9, 13 ], [ 2, 4, 8, 14 ], 
+      [ 5, 7, 9, 15 ], [ 2, 6, 8, 16 ], [ 1, 7, 11, 15 ], [ 8, 12, 14, 16 ], 
+      [ 1, 9, 13, 15 ] ], 
+  representatives := [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16 ], 
+  names := [ [  ], [ 1 ], [ 1, 2 ], [ 1, 2, 3 ], [ 1, 2, 3, 4 ], [ 1, 2, 4 ], 
+      [ 1, 3 ], [ 1, 3, 4 ], [ 1, 4 ], [ 2 ], [ 2, 3 ], [ 2, 3, 4 ], [ 2, 4 ], 
+      [ 3 ], [ 3, 4 ], [ 4 ] ], isSimple := true )
+gap> Size(last);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error no 1st choice method found for `Size' on 1 arguments at
+Error( no_method_found );
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop, you can 'quit;' to quit to outer loop,
+or you can return to continue
+brk> gap> UndirectedEdges(h4);
+[ [ 1, 2 ], [ 1, 10 ], [ 1, 14 ], [ 1, 16 ], [ 2, 3 ], [ 2, 7 ], [ 2, 9 ], 
+  [ 3, 4 ], [ 3, 6 ], [ 3, 10 ], [ 4, 5 ], [ 4, 7 ], [ 4, 11 ], [ 5, 6 ], 
+  [ 5, 8 ], [ 5, 12 ], [ 6, 9 ], [ 6, 13 ], [ 7, 8 ], [ 7, 14 ], [ 8, 9 ], 
+  [ 8, 15 ], [ 9, 16 ], [ 10, 11 ], [ 10, 13 ], [ 11, 12 ], [ 11, 14 ], 
+  [ 12, 13 ], [ 12, 15 ], [ 13, 16 ], [ 14, 15 ], [ 15, 16 ] ]
+gap> Size(last);
+32
+gap> AutGroupGraph(h4);
+Group([ ( 4, 6)( 7, 9)(11,13)(14,16), ( 3, 7)( 6, 8)(10,14)(13,15), 
+  ( 2,10)( 7,11)( 8,12)( 9,13), ( 1, 2)( 3,10)( 4,11)( 5,12)( 6,13)( 7,14)
+    ( 8,15)( 9,16) ])
+gap> Size(last);
+384
+gap> hp:=Intersection(h4,hn);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error no 1st choice method found for `Intersection2' on 2 arguments at
+Error( no_method_found );
+Intersection2( I, D ) called from
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop, you can 'quit;' to quit to outer loop,
+or you can return to continue
+brk> gap> List(h4);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error no 1st choice method found for `ListOp' on 1 arguments at
+Error( no_method_found );
+CallFuncList( ListOp, arg ) called from
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop, you can 'quit;' to quit to outer loop,
+or you can return to continue
+brk> gap> agh4:=AutGroupGraph(h4);
+Group([ ( 4, 6)( 7, 9)(11,13)(14,16), ( 3, 7)( 6, 8)(10,14)(13,15), 
+  ( 2,10)( 7,11)( 8,12)( 9,13), ( 1, 2)( 3,10)( 4,11)( 5,12)( 6,13)( 7,14)
+    ( 8,15)( 9,16) ])
+gap> aghn:=AutGroupGraph(hn);
+<permutation group of size 10321920 with 10 generators>
+gap> aghp:=Intersection(agh4,aghn);
+Group([ ( 2,14)( 3,11)( 6,12)( 9,15), ( 1,10)( 2, 3)( 4, 7)( 5, 8)( 6, 9)(11,14)
+    (12,15)(13,16), ( 1,13)( 2, 6)( 3, 9)( 4, 8)( 5, 7)(10,16)(11,15)(12,14) ])
+gap> Size(last);
+8
+gap> List(last);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error no 1st choice method found for `ListOp' on 1 arguments at
+Error( no_method_found );
+CallFuncList( ListOp, arg ) called from
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop, you can 'quit;' to quit to outer loop,
+or you can return to continue
+brk> gap> aghp:=Intersection(agh4,aghn);
+Group([ ( 2,14)( 3,11)( 6,12)( 9,15), ( 1,10)( 2, 3)( 4, 7)( 5, 8)( 6, 9)(11,14)
+    (12,15)(13,16), ( 1,13)( 2, 6)( 3, 9)( 4, 8)( 5, 7)(10,16)(11,15)(12,14) ])
+gap> List(last);
+[ (), ( 1,10)( 2, 3)( 4, 7)( 5, 8)( 6, 9)(11,14)(12,15)(13,16), 
+  ( 1,13)( 2, 6)( 3, 9)( 4, 8)( 5, 7)(10,16)(11,15)(12,14), 
+  ( 1,16)( 2, 9)( 3, 6)( 4, 5)( 7, 8)(10,13)(11,12)(14,15), 
+  ( 2,14)( 3,11)( 6,12)( 9,15), ( 1,10)( 2,11)( 3,14)( 4, 7)( 5, 8)( 6,15)
+    ( 9,12)(13,16), ( 1,13)( 2,12)( 3,15)( 4, 8)( 5, 7)( 6,14)( 9,11)(10,16), 
+  ( 1,16)( 2,15)( 3,12)( 4, 5)( 6,11)( 7, 8)( 9,14)(10,13) ]
+gap> h44;
+<permutation group of size 48 with 48 generators>
+gap> h444;
+<permutation group of size 48 with 48 generators>
+gap> h4;
+rec( isGraph := true, order := 16, 
+  group := Group([ ( 2,10)( 7,11)( 8,12)( 9,13) ]), 
+  schreierVector := [ -1, -2, -3, -4, -5, -6, -7, -8, -9, 1, 1, 1, 1, -10, -11, 
+      -12 ], 
+  adjacencies := [ [ 2, 10, 14, 16 ], [ 1, 3, 7, 9 ], [ 2, 4, 6, 10 ], 
+      [ 3, 5, 7, 11 ], [ 4, 6, 8, 12 ], [ 3, 5, 9, 13 ], [ 2, 4, 8, 14 ], 
+      [ 5, 7, 9, 15 ], [ 2, 6, 8, 16 ], [ 1, 7, 11, 15 ], [ 8, 12, 14, 16 ], 
+      [ 1, 9, 13, 15 ] ], 
+  representatives := [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 14, 15, 16 ], 
+  names := [ [  ], [ 1 ], [ 1, 2 ], [ 1, 2, 3 ], [ 1, 2, 3, 4 ], [ 1, 2, 4 ], 
+      [ 1, 3 ], [ 1, 3, 4 ], [ 1, 4 ], [ 2 ], [ 2, 3 ], [ 2, 3, 4 ], [ 2, 4 ], 
+      [ 3 ], [ 3, 4 ], [ 4 ] ], isSimple := true, 
+  autGroup := Group([ ( 4, 6)( 7, 9)(11,13)(14,16), 
+      ( 3, 7)( 6, 8)(10,14)(13,15), ( 2,10)( 7,11)( 8,12)( 9,13), 
+      ( 1, 2)( 3,10)( 4,11)( 5,12)( 6,13)( 7,14)( 8,15)( 9,16) ]) )
+gap> agmm4;
+Variable: 'agmm4' must have a value
+gap> aggm4;
+Variable: 'aggm4' must have a value
+gap> Read("/home/anton/lab/gap/agm.lst");
+Error file "/home/anton/lab/gap/agm.lst" must exist and be readable at
+Error( "file \"", name, "\" must exist and be readable" );
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop, you can 'quit;' to quit to outer loop,
+or you can return to continue
+brk> gap> Read("/home/anton/lab/gap/agm4.lst");
+gap> agm4;
+<permutation group with 9 generators>
+gap> Size(last);
+10321920
+gap> hp:=Intersection(h4,hn);
+Error, no method found! For debugging hints type ?Recovery from NoMethodFound
+Error no 1st choice method found for `Intersection2' on 2 arguments at
+Error( no_method_found );
+Intersection2( I, D ) called from
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop, you can 'quit;' to quit to outer loop,
+or you can return to continue
+brk> gap> aghp:=Intersection(agh4,aghn);
+Group([ ( 2,14)( 3,11)( 6,12)( 9,15), ( 1,10)( 2, 3)( 4, 7)( 5, 8)( 6, 9)(11,14)
+    (12,15)(13,16), ( 1,13)( 2, 6)( 3, 9)( 4, 8)( 5, 7)(10,16)(11,15)(12,14) ])
+gap> aghm:=Intersection(agh4,agm4);
+Group([ ( 3, 7)( 6, 8)(10,14)(13,15), ( 2,10,14)( 3,11, 7)( 6,12, 8)( 9,13,15), 
+  ( 1, 2)( 3,14)( 4,11)( 5,12)( 6,15)( 7,10)( 8,13)( 9,16), 
+  ( 1, 5)( 2, 6,10,12,14, 8)( 3,13,11,15, 7, 9)( 4,16) ])
+gap> Size(last);
+96
+gap> IsSubgroup(aghp,aghm);
+false
+gap> hpm:=Intersection(aghm,aghp);
+Group([ ( 2,14)( 3,11)( 6,12)( 9,15), ( 1,10)( 2, 3)( 4, 7)( 5, 8)( 6, 9)(11,14)
+    (12,15)(13,16), ( 1,13)( 2, 6)( 3, 9)( 4, 8)( 5, 7)(10,16)(11,15)(12,14) ])
+gap> Size(last);
+8
+gap> IsSubgroup(aghm,aghp);
+true
+gap> FactorGroup(aghm,aghp);
+Error <N> must be a normal subgroup of <G> at
+Error( "<N> must be a normal subgroup of <G>" );
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop, you can 'quit;' to quit to outer loop,
+or you can return to continue
+brk> [ [ 1, 2, 5, 10, 6, 12, 14, 7, 8, 15, 3, 9, 13, 11, 16, 4 ] ]
+brk> [ [ 1, 10, 13, 16 ], [ 2, 14, 3, 6, 11, 12, 9, 15 ], [ 4, 7, 8, 5 ] ]
+brk> [ [ 1, 2, 10, 14, 3, 16, 7, 9, 11, 13, 4, 15, 6, 8, 12, 5 ] ]
+brk> gap> Read("/home/anton/lab/gap/nhh.lst");
+gap> nh;
+Variable: 'nh' must have a value
+gap> hn;
+rec( isGraph := true, order := 16, group := Group(()), 
+  schreierVector := [ -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, 
+      -14, -15, -16 ], 
+  adjacencies := [ [ 10 ], [ 9 ], [ 6 ], [ 7 ], [ 8 ], [ 3 ], [ 4 ], [ 5 ], 
+      [ 2 ], [ 1 ], [ 12 ], [ 11 ], [ 16 ], [ 15 ], [ 14 ], [ 13 ] ], 
+  representatives := [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ], 
+  isSimple := true )
+gap> aghn:=AutGroupGraph(hn);
+<permutation group with 10 generators>
+gap> agh4:=AutGroupGraph(h4);
+Group([ ( 4, 6)( 7, 9)(11,13)(14,16), ( 3, 7)( 6, 8)(10,14)(13,15), 
+  ( 2,10)( 7,11)( 8,12)( 9,13), ( 1, 2)( 3,10)( 4,11)( 5,12)( 6,13)( 7,14)
+    ( 8,15)( 9,16) ])
+gap> aghp:=Intersection(agh4,aghn);
+Group([ ( 2,14)( 3,11)( 6,12)( 9,15), ( 1, 2)( 3,16)( 4,15)( 5,12)( 6,13)( 7,14)
+    ( 8,11)( 9,10), ( 1, 3, 5,15)( 2, 4,12,16)( 6, 8,14,10)( 7,11,13, 9) ])
+gap> Size(last);
+32
+gap> Orbit(aghp);
+Error usage: Orbit(<xset>,<pnt>)
+or Orbit(<G>[,<Omega>],<pnt>[,<gens>,<acts>][,<act>]) at
+Error( "usage: ", name, "(<xset>,<pnt>)\n", "or ", name, 
+ "(<G>[,<Omega>],<pnt>[,<gens>,<acts>][,<act>])" );
+<function>( <arguments> ) called from read-eval-loop
+Entering break read-eval-print loop, you can 'quit;' to quit to outer loop,
+or you can return to continue
+brk> gap> Orbits(aghp);
+[ [ 1, 2, 3, 14, 4, 11, 16, 5, 7, 10, 15, 12, 8, 13, 9, 6 ] ]
+gap> quit;

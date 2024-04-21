@@ -1,0 +1,36 @@
+LogTo("d8z2.log");
+sdp:=[];
+c2:=CyclicGroup(2);
+c2_list:=List(c2);
+d8:=DihedralGroup(8);
+d8_list:=List(d8);
+aut_d8:=AutomorphismGroup(d8);
+aut_d8_list:=List(d8);
+Print("\nSize of aut_d8:",Size(aut_d8));
+for ae in [1..Size(aut_d8)] do
+	flag:=true;
+	Print("\nAutomorphism No.:",ae);
+	Print("\nAutomorphism:\n",aut_d8_list[ae]);
+	alpha:=GroupHomomorphismByImages(c2,aut_d8,
+		[c2_list[2]],[aut_d8list[ae]]);
+	if alpha <> fail then
+		Print("\nalpha:\n",alpha);
+		c2zd8:=SemidirectProduct(c2,alpha,d8);
+		Print("\nPretender:\n",c2zd8);
+		for sg in sdp do
+			if IsomorphismGroups(sg,d8) <> fail then 
+				flag:=false;
+				break;
+			fi;
+		od;
+		if flag then
+			flag:=0;
+			Add(sdp,c2zd8);
+			Print("\nAdded group:\n",c2zd8);
+		fi;
+	fi;
+od;
+Print("\n");
+Print("\nFinded groups:\n",sdp);
+Print("\n");
+LogTo();

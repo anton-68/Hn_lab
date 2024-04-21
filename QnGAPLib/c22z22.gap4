@@ -1,0 +1,40 @@
+LogTo("c22z22.log");
+sdp:=[];
+c2:=CyclicGroup(2);
+c2_list:=List(c2);
+c2_2:=DirectProduct(c2,c2);
+c2_2_list:=List(c2_2);
+aut_c2_2:=AutomorphismGroup(c2_2);
+aut_c2_2_list:=List(aut_c2_2);
+Print("\nSize of aut_c2_2:",Size(aut_c2_2));
+for ae in [1..Size(aut_c2_2)] do
+for be in [1..Size(aut_c2_2)] do
+	flag:=true;
+	Print("\nAutomorphism A, No.:",ae);
+	Print("\nAutomorphism A:\n",aut_c2_2_list[ae]);
+	Print("\nAutomorphism B, No.:",be);
+	Print("\nAutomorphism B:\n",aut_c2_2_list[be]);
+	alpha:=GroupHomomorphismByImages(c2_2,aut_c2_2,
+		[c2_2_list[2],c2_2_list[3]],
+		[aut_c2_2_list[ae],aut_c2_2_list[be]]);
+	if alpha <> fail then
+		Print("\nalpha:\n",alpha);
+		c2_2z2_2:=SemidirectProduct(c2_2,alpha,c2_2);
+		Print("\nPretender:\n",c2_2z2_2);
+		for sg in sdp do
+			if IsomorphismGroups(sg,c2_2z2_2) <> fail then 
+				flag:=false;
+				break;
+			fi;
+		od;
+		if flag then
+			flag:=0;
+			Add(sdp,c2_2z2_2);
+			Print("\nAdded group:\n",c2_2z2_2);
+		fi;
+	fi;
+od;od;
+Print("\n");
+Print("\nFinded groups:\n",sdp);
+Print("\n");
+LogTo();

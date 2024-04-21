@@ -1,0 +1,12 @@
+RequirePackage("grape");
+RequirePackage("hypercube");
+Read("/home/anton/lab/gap/hnlib/n4_1111a.m");
+Read("/home/anton/lab/gap/hnlib/n4_1111b.m");
+Read("/home/anton/lab/gap/hnlib/n4_4000.m");
+Read("/home/anton/lab/gap/hnlib/n4_2110.m");
+Read("/home/anton/lab/gap/hnlib/n4_2101.m");
+Read("/home/anton/lab/gap/hnlib/n4_2011.m");
+Read("/home/anton/lab/gap/hnlib/n4_2200.m");
+Read("/home/anton/lab/gap/hnlib/n4_3100.m");
+
+
